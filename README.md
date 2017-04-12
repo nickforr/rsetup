@@ -24,9 +24,9 @@ docker info
 Clone this repo and build, then run, docker image
 ```bash
 sudo yum install -y git
-git clone git://github.com/nickforr/myrsetup.git myrsetup
-cd myrsetup
-docker build -t myrsetup .
-docker run -d -p 8787:8787 -v /dev/sdb:/home/nickforr/ -e USER=nickforr -e PASSWORD=<password> rmyrsetup
+git clone git://github.com/nickforr/myrsetup.git rsetup
+cd rsetup
+docker build -t rsetup .
+docker run -d -p 8787:8787 -v /dev/sdb:/home/nickforr/ -e USER=nickforr -e PASSWORD=<password> rsetup
 
 ```
