@@ -23,11 +23,8 @@ RUN apt-get update \
     beeswarm \
     checkpoint \
     covr \
-    daff \
     data.table \
-    DBI \
     DT \
-    edgebundleR \
     extrafont \
     flexdashboard \
   && . /etc/environment \
@@ -43,8 +40,6 @@ RUN apt-get update \
   && install2.r --error --repos $CRAN --deps TRUE \
     gridBase \
     gridExtra \
-    gtable \
-    gtools \
     highr \
     Hmisc \
   && . /etc/environment \
@@ -52,7 +47,6 @@ RUN apt-get update \
     htmlTable \
     htmltools \
     htmlwidgets \
-    httpuv \
     httr \
     jsonlite \
     leaflet \
@@ -61,7 +55,6 @@ RUN apt-get update \
   && . /etc/environment \
   && install2.r --error --repos $CRAN --deps TRUE \
     mvtnorm \
-    NLP \
     optimx \
     plotly \
     profvis \
@@ -84,12 +77,7 @@ RUN apt-get update \
     sparklyr \
     SparseM \
     testthat \
-    threejs \
     tm \
-    treemap \
-    tufte \
-    validate \
-    vegalite \
     viridis \
     viridisLite \
   && . /etc/environment \
