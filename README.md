@@ -7,33 +7,26 @@ Intention is for this to be used to run RStudio server within an AWS EC2 instanc
 
 Want to be able to link files from the docker container to the EC2 instance, which in turn should be linked to 
 
-## Usage:
 
-Start an RStudio server container. From the docker window: 
+http://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html
+
 
 ```bash
-git clone 
-cd ...
+sudo yum install -y docker
+sudo service docker start
+sudo usermod -a -G docker ec2-user
+```
+Log out and log back in again to pick up the new docker group permissions.
+```bash
+docker info
+```
+
+Clone this repo and build, then run, docker image
+```bash
+sudo yum install -y git
+git clone git://github.com/nickforr/myrsetup.git myrsetup
+cd myrsetup
 docker build -t myrsetup .
-docker run -d -p 8787:8787 -e USER=<username> -e PASSWORD=<password> -v $(pwd):/home/$USER/foo -e USERID=$UID  myrsetup
+docker run -d -p 8787:8787 -v /dev/sdb:/home/nickforr/ -e USER=nickforr -e PASSWORD=<password> rmyrsetup
+
 ```
-
-Use the `docker-machine ip` to determine the ip address for your local or remote machine command, then visit that address
-appended with the port `:8787`.  You can now log in to the session with the default username and password.
-
-- username: rstudio 
-- password: rstudio
-
-
-For customization details, including custom passwords & shared volumes see [Using the Rstudio image](https://github.com/rocker-org/rocker/wiki/Using-the-RStudio-image)
-
-In a real deployment scenario, you will probably want to run the container in detached mode (`-d`) and listening on the host's port 80 (`-p 80:8787`) and also customize the username and password: (important for publicly hosted/cloud instances):
-
-```sh
-docker run -d -p 80:8787 -e USER=<username> -e PASSWORD=<password> hymans-r
-```
-
-
-## Trademarks
-
-RStudio is a registered trademark of RStudio, Inc. Please review RStudio's trademark use policy and address inquiries about further distribution or other questions to permissions@rstudio.com.
