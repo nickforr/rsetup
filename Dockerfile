@@ -11,7 +11,7 @@ RUN apt-get update \
   > /usr/local/lib/R/etc/Rprofile.site \
   && Rscript -e "update.packages(repos = getOption('repos'), ask = FALSE)" \
   && . /etc/environment \
-  && install2.r --error --repos $MRAN --deps TRUE \
+  && install2.r --error --repos $CRAN --deps TRUE \
     abind \
     assertive \
     assertthat \
