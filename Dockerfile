@@ -10,6 +10,13 @@ RUN apt-get update \
   && echo "options(repos = c(CRAN = '$CRAN', MRAN = '$MRAN'))" \
   > /usr/local/lib/R/etc/Rprofile.site \
   && Rscript -e "update.packages(repos = getOption('repos'), ask = FALSE)" \
+  && Rscript -e "devtools::install_github( \
+  c('hrbrmstr/pluralize', \
+  'hrbrmstr/streamgraph', \
+  'hrbrmstr/hrbrthemes', \
+  'jcheng5/bubbles', \
+  'mattflor/chorddiag', \
+  'timelyportfolio/rcdimple'))" \
   && . /etc/environment \
   && install2.r --error --repos $CRAN --deps TRUE \
     abind \
