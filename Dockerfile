@@ -26,6 +26,8 @@ RUN apt-get update \
     BayesFactor \
     beeswarm \
     bookdown \
+  && . /etc/environment \
+  && install2.r --error --repos $CRAN --deps TRUE \
     checkpoint \
     chron \
     circlize \
@@ -33,6 +35,8 @@ RUN apt-get update \
     covr \
     d3heatmap \
     daff \
+  && . /etc/environment \
+  && install2.r --error --repos $CRAN --deps TRUE \
     data.table \
     DBI \
     dendextend \
@@ -41,6 +45,8 @@ RUN apt-get update \
     DiagrammeR \
     doBy \
     doParallel \
+  && . /etc/environment \
+  && install2.r --error --repos $CRAN --deps TRUE \
     dplyr \
     drat \
     DT \
@@ -49,6 +55,8 @@ RUN apt-get update \
     extrafont \
     feather \
     flexdashboard \
+  && . /etc/environment \
+  && install2.r --error --repos $CRAN --deps TRUE \
     forcats \
     foreach \
     formatR \
@@ -57,6 +65,8 @@ RUN apt-get update \
     GGally \
     ggalt \
     ggiraph \
+  && . /etc/environment \
+  && install2.r --error --repos $CRAN --deps TRUE \
     ggmap \
     ggplot2 \
     ggplot2movies \
@@ -66,6 +76,8 @@ RUN apt-get update \
     git2r \
     googleAuthR \
     googleVis \
+  && . /etc/environment \
+  && install2.r --error --repos $CRAN --deps TRUE \
     gridBase \
     gridExtra \
     gtable \
@@ -73,6 +85,8 @@ RUN apt-get update \
     highr \
     Hmisc \
     hrbrthemes \
+  && . /etc/environment \
+  && install2.r --error --repos $CRAN --deps TRUE \
     htmlTable \
     htmltools \
     htmlwidgets \
@@ -80,12 +94,16 @@ RUN apt-get update \
     httr \
     installr \
     jsonlite \
+  && . /etc/environment \
+  && install2.r --error --repos $CRAN --deps TRUE \
     knitr \
     latticeExtra \
     lazyeval \
     leaflet \
     likert \
     lubridate \
+  && . /etc/environment \
+  && install2.r --error --repos $CRAN --deps TRUE \
     maps \
     maptools \
     markdown \
@@ -93,6 +111,8 @@ RUN apt-get update \
     metricsgraphics \
     microbenchmark \
     miniCRAN \
+  && . /etc/environment \
+  && install2.r --error --repos $CRAN --deps TRUE \
     mvtnorm \
     NLP \
     openssl \
@@ -101,6 +121,8 @@ RUN apt-get update \
     pairsD3 \
     plotly \
     profvis \
+  && . /etc/environment \
+  && install2.r --error --repos $CRAN --deps TRUE \
     psych \
     purrr \
     Quandl \
@@ -108,6 +130,8 @@ RUN apt-get update \
     readxl \
     remotes \
     reshape2 \
+  && . /etc/environment \
+  && install2.r --error --repos $CRAN --deps TRUE \
     revealjs \
     rfoaas \
     rgeos \
@@ -118,6 +142,8 @@ RUN apt-get update \
     rngtools \
     RODBC \
     rootSolve \
+  && . /etc/environment \
+  && install2.r --error --repos $CRAN --deps TRUE \
     roxygen2 \
     rsconnect \
     Rserve \
@@ -127,6 +153,8 @@ RUN apt-get update \
     scatterD3 \
     shiny \
     shinydashboard \
+  && . /etc/environment \
+  && install2.r --error --repos $CRAN --deps TRUE \
     shinyjs \
     shinythemes \
     sn \
@@ -137,6 +165,8 @@ RUN apt-get update \
     threejs \
     tidyr \
     tidyverse \
+  && . /etc/environment \
+  && install2.r --error --repos $CRAN --deps TRUE \
     tm \
     treemap \
     tufte \
@@ -144,6 +174,8 @@ RUN apt-get update \
     vegalite \
     viridis \
     viridisLite \
+  && . /etc/environment \
+  && install2.r --error --repos $CRAN --deps TRUE \
     waffle \
     wordcloud \
     XML \
