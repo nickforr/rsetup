@@ -19,7 +19,6 @@ RUN apt-get update \
   && tar -xf geos-${GEOS_VERSION}.tar.bz2 \
   && . /etc/environment \
   && install2.r --error \
-    --repos 'http://www.bioconductor.org/packages/release/bioc' \
     --repos $MRAN \ 
     --deps TRUE \
     Hmisc lubridate ggiraph ggrepel ggthemes leaflet optimx \
