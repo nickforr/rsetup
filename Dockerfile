@@ -7,6 +7,7 @@ ENV GEOS_VERSION 3.5.1
 
 RUN apt-get update \ 
   && apt-get install -y --no-install-recommends \
+  lbzip2 \
   libv8-dev \
   libproj-dev \
   libudunits2-dev \
