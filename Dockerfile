@@ -14,6 +14,34 @@ RUN apt-get update \
   && tar -xf gdal-2.1.3.tar.gz \
   && wget http://download.osgeo.org/geos/geos-3.5.1.tar.bz2 \
   && tar -xf geos-3.5.1.tar.bz2 \
+  ## Install dependencies of gdal-$GDAL_VERSION
+## && echo "deb-src http://deb.debian.org/debian jessie main" >> /etc/apt/sources.list \
+## Install libgeos \
+  && cd /geos* \
+  && ./configure \
+  && make \
+  && make install \
+## Configure options loosely based on homebrew gdal2 https://github.com/OSGeo/homebrew-osgeo4mac/blob/master/Formula/gdal2.rb
+  && cd /gdal* \
+  && ./configure \
+    --with-curl \
+    --with-dods-root=/usr \
+    --with-freexl \
+    --with-geos \
+    --with-geotiff \
+    --with-hdf4 \
+    --with-hdf5=/usr/lib/x86_64-linux-gnu/hdf5/serial \
+    --with-libjson-c \
+    --with-netcdf \
+    --with-odbc \
+    ##
+    --without-grass \
+    --without-libgrass \
+  && make \
+  && make install \
+  && cd .. \
+  ## Cleanup gdal & geos installation
+  && rm -rf gdal-* geos-* \
   && . /etc/environment \
   && install2.r --error \
     --repos $MRAN \ 
