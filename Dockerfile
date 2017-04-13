@@ -8,8 +8,8 @@ RUN apt-get update \
   libv8-dev \
   libproj-dev \
   libudunits2-dev \
-  libgdal-dev \
-  libgeos-dev \
+  #libgdal-dev \
+  #libgeos-dev \
   && wget http://download.osgeo.org/gdal/2.1.3/gdal-2.1.3.tar.gz \
   && tar -xf gdal-2.1.3.tar.gz \
   && wget http://download.osgeo.org/geos/geos-3.5.1.tar.bz2 \
