@@ -8,6 +8,7 @@ RUN apt-get update \
   libproj-dev \
   libudunits2-dev \
   libgdal-dev \
+  libgeos-dev \
   && . /etc/environment \
   && install2.r --error \
     --repos 'http://www.bioconductor.org/packages/release/bioc' \
