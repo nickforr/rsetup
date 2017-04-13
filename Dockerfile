@@ -6,32 +6,13 @@ RUN apt-get update \
   && apt-get install -y --no-install-recommends \
   libv8-dev \
   libproj-dev \
-  && CRAN=https://cran.rstudio.com \
-  && echo "options(repos = c(CRAN = '$CRAN', MRAN = '$MRAN'))" \
-  > /usr/local/lib/R/etc/Rprofile.site \
-  && Rscript -e "update.packages(repos = getOption('repos'), ask = FALSE)" \
-  && Rscript -e "install.packages( \
-    'flexdashboard', \
-    'ggalt', \
-    'ggiraph', \
-    'ggrepel', \
-    'ggthemes', \
-    'Hmisc', \
-    'htmlTable', \
-    'htmlwidgets', \
-    'httr', \
-    'jsonlite', \
-    'leaflet', \
-    'lubridate', \
-    'microbenchmark', \
-    'optimx', \
-    'shiny', \
-    'shinydashboard', \
-    'testthat', \
-    'xtable', \
-    'xts', \
-    'zoo', \
-    repos = getOption('repos'), ask = FALSE)" \
+  && . /etc/environment \
+  && install2.r --error \
+    --repos 'http://www.bioconductor.org/packages/release/bioc' \
+    --repos $MRAN \ 
+    --deps TRUE \
+    Hmisc lubridate ggiraph ggrepel ggthemes leaflet optimx \
+    microbenchmark shiny shinydashboard htmlTable optimx xtable \
   && Rscript -e "devtools::install_github( \
     c('hrbrmstr/pluralize', \
     'hrbrmstr/streamgraph', \
