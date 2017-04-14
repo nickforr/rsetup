@@ -30,7 +30,7 @@ RUN apt-get update \
   unixodbc-dev \
   libgdal-dev \
   libgeos-dev \
-  && MRAN=https://mran.microsoft.com/snapshot/31-03-2017 \
+  && MRAN=https://mran.microsoft.com/snapshot/2017-03-31 \
   && echo MRAN=$MRAN >> /etc/environment \
   && export MRAN=$MRAN \
   && . /etc/environment \
