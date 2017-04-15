@@ -28,7 +28,8 @@ RUN apt-get update \
   libxerces-c-dev \
   netcdf-bin \
   unixodbc-dev \
-  libgdal-dev \
+  r-cran-rgdal
+  #libgdal-dev \
   libgeos-dev \
   && MRAN=https://mran.microsoft.com/snapshot/2017-03-31 \
   && echo MRAN=$MRAN >> /etc/environment \
