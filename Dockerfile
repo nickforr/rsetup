@@ -87,14 +87,6 @@ RUN apt-get update \
     rgeos \
     rlas \
     sf \
-    sp \
-    spacetime \
-    spatstat \
-    spdep \
-    splancs \
-    geoR \
-    ## from bioconductor
-    rhdf5 \
     ## my additions
     Hmisc \
     ggiraph \
