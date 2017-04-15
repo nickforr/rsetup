@@ -28,7 +28,6 @@ RUN apt-get update \
   libxerces-c-dev \
   netcdf-bin \
   unixodbc-dev \
-  r-cran-rgdal \
   #libgdal-dev \
   libgeos-dev \
   && MRAN=https://mran.microsoft.com/snapshot/2017-03-31 \
@@ -38,7 +37,7 @@ RUN apt-get update \
   && install2.r --error \
     --repos $MRAN \ 
     --deps TRUE \
-    Hmisc lubridate ggiraph ggrepel ggthemes leaflet optimx \
+    rgdal Hmisc lubridate ggiraph ggrepel ggthemes leaflet optimx \
     microbenchmark shiny shinydashboard htmlTable optimx xtable \
   && Rscript -e "devtools::install_github( \
     c('hrbrmstr/pluralize', \
