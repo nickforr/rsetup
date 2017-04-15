@@ -14,6 +14,7 @@ RUN apt-get update \
     libexpat1-dev \
     libfftw3-dev \
     libfreexl-dev \
+    libv8-dev \
 #  libgeos-dev \ # Need 3.5, this is 3.3
     libgsl0-dev \
     libglu1-mesa-dev \
