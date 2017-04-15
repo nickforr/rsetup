@@ -68,7 +68,7 @@ RUN apt-get update \
   && . /etc/environment \
 ## Install R packages labeled "core" in Spatial taskview 
   && install2.r --error \
-    --repos 'https://cloud.r-project.org/' \
+    --repos 'https://cran.rstudio.com/' \
     --repos 'http://www.bioconductor.org/packages/release/bioc' \
     ## from CRAN
     DCluster \
