@@ -27,6 +27,6 @@ sudo yum install -y git
 git clone git://github.com/nickforr/myrsetup.git rsetup
 cd rsetup
 docker build -t rsetup .
-docker run -d -p 8787:8787 -v /dev/sdb:/home/nickforr/ -e USER=nickforr -e PASSWORD=<password> rsetup
+docker run -d -p 8787:8787 --name rsetup -v /dev/sdb:/home/nickforr/ -e USER=nickforr -e PASSWORD=<password> rsetup
 
 ```
