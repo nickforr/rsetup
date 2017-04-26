@@ -10,7 +10,7 @@ Want to be able to link files from the docker container to the EC2 instance, whi
 
 http://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html
 
-Need to mount EBS volumne
+Need to mount EBS volumne (http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html)
 ```bash
 #First time only need the following
 sudo mkfs -t ext4 device_name
